@@ -19,6 +19,12 @@ public:
     QString name(void) const;
     bool isCompleted(void) const;
 
+public slots:
+    void rename();
+
+signals:
+    void removed(Task* task);
+
 private:
     Ui::Task *ui;
 };
