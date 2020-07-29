@@ -22,6 +22,11 @@ Task::Task(const QString& name, QWidget *parent) :
             qDebug() << "Trying to remove... " << name;
             emit removed(this);
         });
+    connect(
+        ui->checkbox,
+        &QCheckBox::toggled,
+        this,
+        &Task::checked);
 }
 
 void Task::setName(const QString &name)
@@ -54,6 +59,14 @@ QString Task::name(void) const
 bool Task::isCompleted(void) const
 {
     return ui->checkbox->isChecked();
+}
+
+void Task::checked(bool checked)
+{
+    QFont font(ui->checkbox->font());
+    font.setStrikeOut(checked);
+    ui->checkbox->setFont(font);
+    emit statusChanged(this);
 }
 
 Task::~Task()
