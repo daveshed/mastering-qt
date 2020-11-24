@@ -8,7 +8,10 @@
 class QSqlDatabase;
 
 const QString DATABASE_FILENAME = "gallery.db";
-
+/*
+ * A singleton that manages access to an underlying database through a public
+ * digital access object.
+ */
 class DatabaseManager
 {
 public:

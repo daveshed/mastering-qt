@@ -13,14 +13,20 @@ CONFIG += c++11
 SOURCES += \
     album.cpp \
     albumdigitalaccessobject.cpp \
+    albummodel.cpp \
     databasemanager.cpp \
-    picture.cpp
+    picture.cpp \
+    picturedigitalaccessobject.cpp \
+    picturemodel.cpp
 
 HEADERS += \
     albumdigitalaccessobject.h \
+    albummodel.h \
     databasemanager.h \
     gallery-core_global.h \
     album.h \
-    picture.h
+    picture.h \
+    picturedigitalaccessobject.h \
+    picturemodel.h
 
 !isEmpty(target.path): INSTALLS += target
